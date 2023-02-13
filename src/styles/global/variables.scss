@@ -1,0 +1,33 @@
+$containerWidth: 1400px;
+
+$color1: #ffffff;
+$color2: #000000;
+$color3: #7D7D9A;
+$color4: #22447e;
+$color5: #f4f4f4;
+$color6: #FAFBFF;
+$color7: #838383;
+$color8: #9197B3;
+$color9: #5932EA;
+$color10: #16C098;
+$color11: #F9FBFF;
+$color12: #B5B7C0;
+$color13: #00B087;
+$color14: #008767;
+$color15: #FFC5C5;
+$color16: #DF0404;
+$color17: #EEEEEE;
+$color18: #F5F5F5;
+
+$colorError: #D61818;
+$colorSuccess: #07773F;
+
+.dotted-background {
+    background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.1), rgba(0,0,0,.1) 1px, transparent 1px, transparent 100%);
+    background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.1), rgba(0,0,0,.1) 1px, transparent 1px, transparent 100%);
+    background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.1), rgba(0,0,0,.1) 1px, transparent 1px, transparent 100%);
+    background-image: repeating-radial-gradient(center center, rgba(0,0,0,.1), rgba(0,0,0,.1) 1px, transparent 1px, transparent 100%);
+    -webkit-background-size: 10px 10px;
+    -moz-background-size: 10px 10px;
+    background-size: 10px 10px;
+}

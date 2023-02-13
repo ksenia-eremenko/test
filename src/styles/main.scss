@@ -1,0 +1,12 @@
+@import "./global/common/reset";
+//common
+@import "./global/variables",
+        "./global/mixins",
+        "./global/typography",
+        "./global/common";
+
+// blocks
+@import "../components/Sidebar/Sidebar",
+        "../components/Customers/Customers",
+        "../components/Nav/Nav",
+        "../components/Common/BgOverlay/BgOverlay";

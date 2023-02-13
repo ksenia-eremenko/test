@@ -1,0 +1,156 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    z-index: 11;
+
+    @include nb {
+        gap: 15px;
+    }
+
+    @include tb {
+        gap: 10px;
+    }
+
+    @include mb {
+        position: fixed;
+        justify-content: center;
+        width: 200px;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        background: $color2;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        @include animate;
+    }
+
+    &.active {
+        left: 0;
+    }
+
+    li {
+        list-style-type: none;
+
+        @include mb {
+            width: 100%;
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            text-align: center;
+            color: $color8;
+            @include animate;
+            padding: 10px;
+            border-radius: 8px;
+
+            @include tbmb {
+                gap: 10px;
+            }
+
+            @include mb {
+                padding: 12px 10px;
+            }
+
+            span {
+                flex: auto;
+                text-align: left;
+                font-size: 14px;
+                line-height: 14px;
+            }
+
+            .icon {
+                svg {
+                    width: 25px;
+                    height: 25px;
+
+                    @include nb {
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    @include tb {
+                        width: 22px;
+                        height: 22px;
+                    }
+                    @include mb {
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    path {
+                        @include animate;
+                    }
+                }
+
+                &.stroke {
+
+                    svg path {
+                        stroke: $color8;
+                    }
+                }
+
+                &.fill {
+                    svg path {
+                        fill: $color8;
+                    }
+                }
+            }
+
+            .icon-arrow {
+
+                svg,
+                svg path {
+                    @include animate;
+                }
+
+                svg,
+                svg path {
+                    stroke: $color8;
+                }
+            }
+
+            &.active,
+            &:hover {
+                @include full {
+                    color: $color1;
+                    background: $color9;
+                }
+
+                @include mb {
+                    color: $color1;
+                }
+
+                .icon {
+                    &.stroke {
+                        svg path {
+                            stroke: $color1;
+                        }
+                    }
+
+                    &.fill {
+                        svg path {
+                            fill: $color1;
+                        }
+                    }
+                }
+
+                .icon-arrow {
+
+                    svg,
+                    svg path {
+                        stroke: $color1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,339 @@
+.customers {
+    width: 100%;
+
+    .customers-wrapper {
+        border-radius: 30px;
+        background: $color1;
+        width: 100%;
+        padding: 30px 35px;
+
+        @include nb {
+            padding: 20px 25px;
+            border-radius: 20px;
+        }
+
+        @include tb {
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        @include mb {
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        &:not(:first-child) {
+            margin-top: 50px;
+
+            @include nb {
+                margin-top: 30px;
+            }
+
+            @include tb {
+                margin-top: 20px;
+            }
+
+            @include mb {
+                margin-top: 15px;
+            }
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include mb2 {
+                flex-direction: column;
+                align-items: baseline;
+                gap: 10px;
+            }
+
+            .left {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                @include mb {
+                    gap: 5px;
+                }
+            }
+
+            .right {
+                @include mb {
+                    gap: 5px;
+                }
+
+                @include mb2 {
+                    width: 100%;
+                }
+
+                .search {
+                    position: relative;
+                    width: 100%;
+
+                    input[type="search"] {
+                        padding-left: 40px;
+                        min-width: 210px;
+
+                        @include nb {
+                            padding-left: 34px;
+                        }
+
+                        @include tbmb {
+                            padding-left: 30px;
+                            min-width: 200px;
+                        }
+
+                        @include mb2 {
+                            width: 100%;
+                        }
+                    }
+
+                    .icon {
+                        position: absolute;
+                        left: 8px;
+                        top: calc(50% - 12px);
+
+                        @include nb {
+                            top: calc(50% - 10px);
+                        }
+
+                        @include tbmb {
+                            top: calc(50% - 8px);
+                        }
+
+                        svg {
+                            width: 24px;
+                            height: 24px;
+
+                            @include nb {
+                                width: 20px;
+                                height: 20px;
+                            }
+
+                            @include tbmb {
+                                width: 16px;
+                                height: 16px;
+                            }
+
+                            path {
+                                stroke: $color8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            &:not(:first-child) {
+                margin-top: 40px;
+
+                @include nb {
+                    margin-top: 25px;
+                }
+
+                @include tb {
+                    margin-top: 20px;
+                }
+
+                @include mb {
+                    margin-top: 15px;
+                }
+            }
+
+            .table-wrapper {
+                @include tbmb {
+                    overflow: auto;
+                    @include customScrollbar($color9, 2px, 2px, 0px);
+                }
+
+                table {
+                    width: 100%;
+
+                    @include tbmb {
+                        min-width: 700px;
+                    }
+
+                    thead,
+                    tbody {
+                        font-size: 14px;
+                        line-height: 20px;
+                        text-align: left;
+
+                        @include nbtb {
+                            font-size: 13px;
+                            line-height: 19px;
+                        }
+
+                        @include mb {
+                            font-size: 13px;
+                            line-height: 17px;
+                        }
+                    }
+
+                    thead {
+                        color: $color12;
+                        position: relative;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            height: 1px;
+                            width: calc(100% + 70px);
+                            background: $color17;
+                            bottom: 0;
+                            left: -35px;
+
+                            @include nb {
+                                width: calc(100% + 50px);
+                                left: -25px;
+                            }
+                        }
+
+                        tr {
+                            th {
+                                padding: 0 10px 15px 10px;
+
+                                @include tbmb {
+                                    padding: 0 10px 10px 10px;
+                                }
+
+                                &:first-child {
+                                    padding-left: 0;
+                                }
+
+                                &:last-child {
+                                    padding-right: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                padding: 20px 10px;
+
+                                @include nb {
+                                    padding: 10px;
+                                }
+
+                                @include tbmb {
+                                    padding: 5px;
+                                }
+
+                                &:first-child {
+                                    padding-left: 0;
+                                }
+
+                                &:last-child {
+                                    padding-right: 0;
+                                }
+                            }
+
+                            &+tr {
+                                border-top: 1px solid $color17;
+                            }
+
+                            &:last-child {
+                                border-bottom: 1px solid $color17;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .pagination {
+                display: flex;
+                justify-content: space-between;
+
+                &:not(:first-child) {
+                    margin-top: 30px;
+
+                    @include nb {
+                        margin-top: 20px;
+                    }
+
+                    @include tb {
+                        margin-top: 15px;
+                    }
+                }
+
+                &--right {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+
+                    @include tbmb {
+                        gap: 10px;
+                    }
+
+                    .arrow,
+                    .pages span:not(.empty) {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: $color18;
+                        border: 1px solid $color17;
+                        border-radius: 4px;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 12px;
+                        width: 25px;
+                        height: 25px;
+                        @include animate;
+
+                        @include tbmb {
+                            width: 22px;
+                            height: 22px;
+                            font-size: 11px;
+                            line-height: 11px;
+                        }
+
+                        @include mb {
+                            width: 20px;
+                            height: 20px;
+                            font-size: 10px;
+                            line-height: 10px;
+                        }
+
+                        &:hover,
+                        &.active {
+                            background: $color9;
+                            border: 1px solid $color9;
+                            color: $color1;
+                        }
+                    }
+
+                    .pages {
+                        display: flex;
+                        gap: 12px;
+
+                        @include nb {
+                            gap: 10px;
+                        }
+
+                        @include tbmb {
+                            gap: 5px;
+                        }
+
+                        span {
+                            &.empty {
+                                display: flex;
+                                align-items: flex-end;
+                                padding-bottom: 5px;
+                            }
+
+                            &.active {
+                                cursor: inherit;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
